@@ -20,6 +20,49 @@
     <style type="text/css">:root #header + #content > #left > #rlblock_left
     {display:none !important;}</style>
     {{ partial "style.html" . }}
+
+    <!-- using-flowchart? https://github.com/adrai/flowchart.js -->
+    {{ if ($.Scratch.Get "using-flowchart") }}
+    <script src="{{ .Site.BaseURL }}/modules/flowchart/raphael.js"></script>
+    <script src="{{ .Site.BaseURL }}/modules/flowchart/flowchart-latest.js"></script>
+    {{ end }}
+
+    <!-- using-jssequence? https://github.com/bramp/js-sequence-diagrams -->
+    {{ if ($.Scratch.Get "using-jssequence") }}
+    <script src="{{ .Site.BaseURL }}/modules/jssequence/webfont.js"></script>
+    <script src="{{ .Site.BaseURL }}/modules/jssequence/snap.svg-min.js"></script>
+    <script src="{{ .Site.BaseURL }}/modules/jssequence/underscore-min.js"></script>
+    <script src="{{ .Site.BaseURL }}/modules/jssequence/sequence-diagram.js"></script>
+    {{ end }}
+
+    <!-- using-jsxgraph? -->
+    {{ if ($.Scratch.Get "using-jsxgraph") }}
+    <link href="{{ .Site.BaseURL }}/modules/jsxgraph/jsxgraph.css" type="text/css" rel="stylesheet"/>
+    <script src="{{ .Site.BaseURL }}/modules/jsxgraph//jsxgraphcore.js"></script>
+    <!-- using-jsxgraph on this page -->
+    {{ end }}
+
+    <!-- using-mermaidjs? -->
+    {{ if ($.Scratch.Get "using-mermaid") }}
+    <link href="{{ .Site.BaseURL }}/modules/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="{{ .Site.BaseURL }}/modules/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    {{ end }}
+
+    <!-- using-nomnoml? -->
+    {{ if ($.Scratch.Get "using-nomnoml") }}
+    {{ end }}
+    
+    <!-- using-mathjax? -->
+    {{ if ($.Scratch.Get "using-mathjax") }}
+    {{ end }}
+
+    <!-- using-cytoscape? -->
+    {{ if ($.Scratch.Get "using-cytoscape") }}
+    {{ end }}
+
+
+
   </head>
   <body class="" data-url="{{ .RelPermalink }}">
     {{ $isChapter := .Params.chapter | default (eq .Kind "section")}}
