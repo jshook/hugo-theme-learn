@@ -8,6 +8,7 @@ var diagram=Diagram.parse(diagramText);
 // insert new after text node.
 var diagramDiv=document.createElement('div');
 textDiv.parentNode.insertBefore(diagramDiv,textDiv.nextSibling);
+textDiv.remove();
 diagram.drawSVG(diagramDiv,{theme:'hand'});
-textDiv.style.visibility='hidden';
+// textDiv.style.visibility='hidden';
 
