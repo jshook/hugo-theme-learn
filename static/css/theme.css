@@ -38,19 +38,6 @@ body {
     background: #fff;
     color: #777;
 }
-body #chapter h1 {
-    font-size: 3.5rem;
-}
-@media only all and (min-width: 48em) and (max-width: 59.938em) {
-    body #chapter h1 {
-        font-size: 3rem;
-    }
-}
-@media only all and (max-width: 47.938em) {
-    body #chapter h1 {
-        font-size: 2rem;
-    }
-}
 a {
     color: #00bdf3;
 }
@@ -410,6 +397,19 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #body-inner {
     margin-bottom: 5rem;
 }
+/* body #chapter h1 {
+    font-size: 3.5rem;
+}
+@media only all and (min-width: 48em) and (max-width: 59.938em) {
+    body #chapter h1 {
+        font-size: 3rem;
+    }
+}
+@media only all and (max-width: 47.938em) {
+    body #chapter h1 {
+        font-size: 2rem;
+    }
+}
 #chapter {
     display: flex;
     align-items: center;
@@ -434,6 +434,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     text-align: center;
     font-size: 1.2rem;
 }
+*/
 #footer {
     padding: 3rem 1rem;
     color: #b3b3b3;
