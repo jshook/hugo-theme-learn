@@ -20,6 +20,10 @@
     <style type="text/css">:root #header + #content > #left > #rlblock_left
     {display:none !important;}</style>
     {{ partial "style.html" . }}
+    <!-- using-viz? https://github.com/mdaines/viz.js/ -->
+    {{ if ($.Scratch.Get "using-viz") }}
+    <script src="{{ .Site.BaseURL }}/modules/viz/viz.js"></script>
+    {{ end }}
 
     <!-- using-flowchart? https://github.com/adrai/flowchart.js -->
     {{ if ($.Scratch.Get "using-flowchart") }}
