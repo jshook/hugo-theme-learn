@@ -1,5 +1,22 @@
 # Hugo Learn Theme
 
+To add this theme as a submodule run the following:
+
+    git submodule add -- https://github.com/jshook/hugo-theme-learn.git ./themes/hugo-theme-learn
+
+The submodule will get pulled into a new directory in your repo:
+
+```
+themes
+└── hugo-theme-learn
+    ├── LICENSE.md
+    ├── PERHAPS.md
+    ├── README.md
+...
+```
+
+Do not edit files directly in the `themes` directory, changes to the theme should happen in this repo and then propagated to existing repos that use this one as a submodule. To propagate changes navigate to the `themes/hugo-theme-learn directory` and run git pull. Then you will have to add / commit / and push the `themes/hugo-theme-learn directory` to commit the update to your repo.
+
 ***NOTE*** When using this as a git submodule in your themes directory, you may have to run this command from your top level git directory:
 ~~~
 git submodule update --init
