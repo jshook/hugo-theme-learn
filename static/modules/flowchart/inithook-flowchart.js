@@ -6,8 +6,9 @@ var diagramText=textpre.innerText||textDiv.textContext;
 // create diagram from text
 var diagram=flowchart.parse(diagramText);
 // insert new after text node.
-var diagramDiv=document.createElement('div');
-textDiv.parentNode.insertBefore(diagramDiv,textDiv.nextSibling);
-diagram.drawSVG(diagramDiv);
-textDiv.style.visibility='hidden';
+// // var diagramDiv=document.createElement('div');
+textDiv.innerHTML="";
+// // textDiv.parentNode.insertBefore(diagramDiv,textDiv.nextSibling);
+diagram.drawSVG(textDiv);
+//textDiv.style.visibility='hidden';
 
