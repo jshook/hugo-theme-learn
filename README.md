@@ -27,6 +27,20 @@ This repository contains a theme for [Hugo](https://gohugo.io/), based on great 
 
 Visit the [theme documentation](https://matcornic.github.io/hugo-learn-doc/basics/what-is-this-hugo-theme/) to see what is going on. It is actually built with this theme.
 
+## vi/vim settings
+
+If you use vim or a vim-backed vi editor, you might prefer these settings to prevent hugo from trying to render unrelated partial content from vim swap files an backups. You can simply add these to your ~/.vimrc
+~~~
+set backup
+set backupdir=~/.vim/tmp
+set dir=~/.vim/tmp
+~~~
+If you use these settings, be sure to
+~~~
+mkdir -p ~/.vim/tmp
+~~~
+
+
 ## Installation
 Navigate to your themes folder in your Hugo site and use the following commands:
 ```
