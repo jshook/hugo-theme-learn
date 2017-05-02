@@ -20,6 +20,7 @@
 /* Background color of the menu, when clicked */
 #sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
   /*background-color: <color>;*/
+    background-color: #007a97;
 }
 
 /* Color of all links, including arrows to get to previous and next pages */
