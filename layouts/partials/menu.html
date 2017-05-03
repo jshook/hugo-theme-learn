@@ -17,15 +17,20 @@
         {{ $.Scratch.Set "_pages" (slice) }}
         {{ range $key, $value := .Site.Sections }}
           {{ $sectionPage := $.Site.GetPage "section" $key }}
-          {{ if $sectionPage.Content }}
+          {{ if $sectionPage.Params.skipmenu }}
+            skipmenu
+          {{ else if $sectionPage.Content }}
             {{ $.Scratch.Add "_pages" $sectionPage }}
-          {{ else if gt $value.Len 0 }}
+          {{ else if gt $value.Len 0  }}
             {{ $.Scratch.Add "_pages" (index $value 0).Page }}
           {{ end }}
         {{ end }}
         {{ $.Scratch.Set "menuItems" (slice)}}
         {{ range $key, $value := sort ($.Scratch.Get "_pages") "Weight" }}
-          {{ $.Scratch.Add "menuItems" $value.Section }}
+           {{ if isset $value.Params "skipmenu" }}
+           {{ else }}
+           {{ $.Scratch.Add "menuItems" $value.Section }}
+           {{ end }}
         {{ end }}
       {{ end }}
       {{ $menuItems := $.Scratch.Get "menuItems" }}
@@ -35,7 +40,8 @@
       {{ $value := (index $.Site.Sections $key) }}
       {{ $.Scratch.Set "_value" $value }}
       {{ with $index := $.Site.GetPage "section" $key }}
-        {{ if .Content }}
+        {{ if .Params.skipmenu }}
+        {{ else if .Content }}
           {{ $.Scratch.Set "first" $index }}
         {{ else if gt $value.Len 0}}
           {{ $.Scratch.Set "first" (index $value 0).Page }}
